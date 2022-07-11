@@ -12,7 +12,7 @@ from config import *
 picker = sbm.PhaseNet(phases='PSN', sampling_rate=sample_rate)
     
 # Load a picker suitable for your region
-location = input('Plase specify a region or province to pick phases, e.g. Beijing. 41 pickers are available in the subfolder "USTC-Pickers/model_list/"')
+location = input('Plase specify a region or province to pick phases, e.g. Beijing. 41 pickers are available in the subfolder "%s"'%os.path.join('USTC-Pickers', 'model_list', ''))
 if location not in en2cn:
     exit('The region you specified is not available. Plase choose a region or province from below--------\n%s\n-----------------------------------------------------------------------------------------------'%(', '.join(en2cn)))
 else:
