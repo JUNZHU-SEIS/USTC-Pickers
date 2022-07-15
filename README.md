@@ -19,7 +19,7 @@
 * Install an environment for USTC-Pickers **manually**
 
   ```bash
-  conda env create -n USTC-Pickers
+  conda create -n USTC-Pickers
   conda activate USTC-Pickers
   conda install python
   pip install seisbench
