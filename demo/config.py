@@ -19,4 +19,6 @@ en2cn['SC'] = '华南'
 en2cn['NA'] = '东北亚'
 cn2en = {y:x for x,y in en2cn.items()}
 
-npz = glob.glob(os.path.join('..', 'test_data', '*.npz'))[0]
+npz = glob.glob(os.path.join('..', 'test_data', 'npz', '*.npz'))[0]
+sac = os.path.join('..', 'test_data', 'sac', 'Beijing*.sac')
+mseed = os.path.join('..', 'test_data', 'mseed', 'Beijing*.mseed')
