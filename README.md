@@ -1,4 +1,4 @@
-# USTC-Pickers: a <font style="color: #124A8C;">U</font>nified <font style="color: #124A8C;">S</font>et of seismic phase pickers <font style="color: #124A8C;">T</font>ransfer learned for <font style="color: #124A8C;">C</font>hina
+# USTC-Pickers: a Unified Set of seismic phase pickers Transfer learned for China
 
 # 1. Install [Anaconda](https://www.anaconda.com/) and requirements
 
