@@ -21,8 +21,10 @@ picker.load_state_dict(torch.load(model_save_path,
 			map_location=device).state_dict())
 
 # 读取波形
-stream = read(sac) 
-#stream = read(mseed) 
+mseed = mseed.replace('Beijing', 'Sichuan')
+sac = sac.replace('Beijing', 'Sichuan')
+#stream = read(sac)
+stream = read(mseed)
 print(stream, '\n')
 
 # 模型响应（非必要）

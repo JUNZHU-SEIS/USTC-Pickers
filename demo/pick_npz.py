@@ -22,6 +22,9 @@ picker.load_state_dict(torch.load(model_save_path,
 
 # 读取波形
 order = ['Z', 'N', 'E']
+#npz = npz.replace('Beijing', 'Sichuan')
+npz = glob.glob(npz)[0]
+print(npz)
 data = np.load(npz)['data']
 stream = Stream([Trace(x, {'channel':'BH%s'%y, 'delta':1/sample_rate}) for x,y in
 		zip(data.transpose(), order)])
