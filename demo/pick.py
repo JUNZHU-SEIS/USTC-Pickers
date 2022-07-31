@@ -20,11 +20,11 @@ print('You are using the picker located at %s\n'%model_save_path)
 picker.load_state_dict(torch.load(model_save_path,
 			map_location=device).state_dict())
 
-# 读取波形
+# 读取波G形
 mseed = mseed.replace('Beijing', 'Sichuan')
 sac = sac.replace('Beijing', 'Sichuan')
-#stream = read(sac)
-stream = read(mseed)
+inputfile = mseed
+stream = read(inputfile)
 print(stream, '\n')
 
 # 模型响应（非必要）
@@ -48,3 +48,17 @@ plt.close()
 detections = picker.classify(stream, P_threshold=.3, S_threshold=.3)
 for x in detections:
     print(x.__dict__,'\n',x.peak_time-x.start_time)
+
+# 保存结果
+P,S = [],[]
+for x in detections:
+    if x.phase=='P':
+        P.append(x)
+    else:
+        S.append(x)
+p, s = [str(x.peak_time) for x in P], [str(x.peak_time) for x in S]
+p_prob, s_prob = [x.peak_value for x in P], [x.peak_value for x in S]
+rela_p, rela_s = [x.peak_time-x.start_time for x in P], [x.peak_time-x.start_time for x in S]
+entry = {'fname':[inputfile], 'p':[p], 's':[s], 'rela_p':[rela_p], 'rela_s':[rela_s], 'p_prob':[p_prob], 's_prob':[s_prob]}
+table = pd.DataFrame(entry)
+table.to_csv('results/picks.csv', index=False)

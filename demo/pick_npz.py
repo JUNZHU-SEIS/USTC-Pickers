@@ -50,3 +50,17 @@ plt.close()
 detections = picker.classify(stream, P_threshold=.3, S_threshold=.3)
 for x in detections:
     print(x.__dict__, '\n', x.peak_time-x.start_time)
+
+# 保存结果
+P,S = [],[]
+for x in detections:
+    if x.phase=='P':
+        P.append(x)
+    else:
+        S.append(x)
+p, s = [str(x.peak_time) for x in P], [str(x.peak_time) for x in S]
+p_prob, s_prob = [x.peak_value for x in P], [x.peak_value for x in S]
+rela_p, rela_s = [x.peak_time-x.start_time for x in P], [x.peak_time-x.start_time for x in S]
+entry = {'fname':[npz], 'p':[p], 's':[s], 'rela_p':[rela_p], 'rela_s':[rela_s], 'p_prob':[p_prob], 's_prob':[s_prob]}
+table = pd.DataFrame(entry)
+table.to_csv('results/picks_npz.csv', index=False)
