@@ -1,2 +1,2 @@
-fname,p,s,rela_p,rela_s,p_prob,s_prob
-../test_data/mseed/Beijing*.mseed,['2018-07-18T15:24:51.140000Z'],['2018-07-18T15:25:02.100000Z'],[0.64],[0.74],[0.9556805],[0.86434275]
+fname,p,s,p_prob,s_prob
+../test_data/mseed/Sichuan*.mseed,['2010-03-14T20:34:55.420000Z'],['2010-03-14T20:35:00.980000Z'],[0.8891787],[0.8264473]

@@ -28,6 +28,7 @@ print(npz)
 data = np.load(npz)['data']
 stream = Stream([Trace(x, {'channel':'BH%s'%y, 'delta':1/sample_rate}) for x,y in
 		zip(data.transpose(), order)])
+print(stream)
 
 # 模型响应（非必要）
 response = picker.annotate(stream)
@@ -49,7 +50,7 @@ plt.close()
 # 拾取震相
 detections = picker.classify(stream, P_threshold=.3, S_threshold=.3)
 for x in detections:
-    print(x.__dict__, '\n', x.peak_time-x.start_time)
+    print(x.__dict__)
 
 # 保存结果
 P,S = [],[]
@@ -60,7 +61,6 @@ for x in detections:
         S.append(x)
 p, s = [str(x.peak_time) for x in P], [str(x.peak_time) for x in S]
 p_prob, s_prob = [x.peak_value for x in P], [x.peak_value for x in S]
-rela_p, rela_s = [x.peak_time-x.start_time for x in P], [x.peak_time-x.start_time for x in S]
-entry = {'fname':[npz], 'p':[p], 's':[s], 'rela_p':[rela_p], 'rela_s':[rela_s], 'p_prob':[p_prob], 's_prob':[s_prob]}
+entry = {'fname':[npz], 'p':[p], 's':[s], 'p_prob':[p_prob], 's_prob':[s_prob]}
 table = pd.DataFrame(entry)
 table.to_csv('results/picks_npz.csv', index=False)

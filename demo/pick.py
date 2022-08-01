@@ -24,6 +24,7 @@ picker.load_state_dict(torch.load(model_save_path,
 mseed = mseed.replace('Beijing', 'Sichuan')
 sac = sac.replace('Beijing', 'Sichuan')
 inputfile = mseed
+print(inputfile)
 stream = read(inputfile)
 print(stream, '\n')
 
@@ -47,7 +48,7 @@ plt.close()
 # 拾取震相
 detections = picker.classify(stream, P_threshold=.3, S_threshold=.3)
 for x in detections:
-    print(x.__dict__,'\n',x.peak_time-x.start_time)
+    print(x.__dict__)
 
 # 保存结果
 P,S = [],[]
@@ -58,7 +59,6 @@ for x in detections:
         S.append(x)
 p, s = [str(x.peak_time) for x in P], [str(x.peak_time) for x in S]
 p_prob, s_prob = [x.peak_value for x in P], [x.peak_value for x in S]
-rela_p, rela_s = [x.peak_time-x.start_time for x in P], [x.peak_time-x.start_time for x in S]
-entry = {'fname':[inputfile], 'p':[p], 's':[s], 'rela_p':[rela_p], 'rela_s':[rela_s], 'p_prob':[p_prob], 's_prob':[s_prob]}
+entry = {'fname':[inputfile], 'p':[p], 's':[s], 'p_prob':[p_prob], 's_prob':[s_prob]}
 table = pd.DataFrame(entry)
 table.to_csv('results/picks.csv', index=False)
