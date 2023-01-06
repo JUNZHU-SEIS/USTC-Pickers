@@ -31,7 +31,7 @@ Located in the directory: **USTC-Pickers/model_list/**. Only the model of China 
 
 # 3. Batch prediction
 
-See details in the [Notebook](https://github.com/JUNZHU-SEIS/USTC-Pickers/blob/main/demo/demo_pick.ipynb)
+See details in the [Notebook](./demo/demo_pick.ipynb)
 
 
 # 4. Citation
