@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 from config import *
 
 # 模型初始化
-picker = sbm.PhaseNet(phases='PSN', sampling_rate=sample_rate)
+picker = sbm.PhaseNet(sampling_rate=sample_rate)
 # 为拾取的目标区域选定合适的picker，如Sichuan（四川）、CSES（实验场）、TP（青藏高原）、China（中国）
 location = input('Plase specify a region or province to pick phases, e.g. Beijing. 41 pickers are available in the subfolder "%s"'%os.path.join('USTC-Pickers', 'model_list', ''))
 if location not in en2cn:
@@ -34,7 +34,7 @@ response.plot()
 fig, ax = plt.subplots(2, 1, sharex=True)
 t = np.arange(response[0].stats.npts)/sample_rate
 ax[0].plot(t, np.array([x.data for x in stream]).transpose(), label=[x.stats.channel for x in stream])
-ax[1].plot(t, np.array([x.data for x in response[:-1]]).transpose(), label=['P', 'S'])
+ax[1].plot(t, np.array([x.data for x in response[1:]]).transpose(), label=['P', 'S'])
 ax[1].set_xlabel('Time (s)')
 ax[1].set_ylim(0, 1)
 for j in ax:
