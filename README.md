@@ -4,14 +4,14 @@ Notes:
 2. This document will be intensely updated before the release of **seisbench v0.3**.
 ![old](https://raw.githubusercontent.com/JUNZHU-SEIS/USTC-Pickers/main/demo/figure/test.png)
 ![new](./demo/figure/Sichuan_New_model.png)
-# USTC-Pickers: a Unified Set of seismic phase pickers Transfer learned for China
+# USTC-Pickers: a Unified Set of Seismic Phase Pickers Transfer Learned for China
 
 # 1. Install [Anaconda](https://www.anaconda.com/) and requirements
 
-* Download USTC-Pickers repository
+* Download the 'phasenet_fix' branch of USTC-Pickers repository
 
   ```bash
-  git clone https://github.com/JUNZHU-SEIS/USTC-Pickers.git
+  git clone --branch phasenet_fix https://github.com/JUNZHU-SEIS/USTC-Pickers.git
   cd USTC-Pickers
   ```
 
@@ -32,7 +32,6 @@ Located in the directory: **USTC-Pickers/model_list/**. Only the model of China 
 # 3. Batch prediction
 
 See details in the [Notebook](./demo/demo_pick.ipynb)
-
 
 # 4. Citation
 If you find this toolkit helpful, please cite papers below:
