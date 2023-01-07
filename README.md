@@ -12,22 +12,24 @@ Notes:
 
   ```bash
   git clone --branch phasenet_fix https://github.com/JUNZHU-SEIS/USTC-Pickers.git
-  cd USTC-Pickers
   ```
 
-* Click this [link](https://github.com/seisbench/seisbench/archive/refs/heads/phasenet_fix.zip) to download the 'phasenet_fix' branch of seisbench
+* Click this [link](https://github.com/seisbench/seisbench/archive/refs/heads/phasenet_fix.zip) to download the 'phasenet_fix' branch of seisbench. Save it in the parent folder of USTC-Pickers (USTC-Pickers/../).
 
 * Install an environment for USTC-Pickers **manually**
 
   ```bash
-  unzip USTC-Pickers-phasenet_fix.zip
+  unzip seisbench-phasenet_fix.zip
+  cd seisbench-phasenet_fix
   conda create -n USTC-Pickers
   conda activate USTC-Pickers
+  conda install python
   pip install .
+  cd ../USTC-Pickers
   ```
 
 # 2. Transfer-learned pickers
-Located in the directory: **USTC-Pickers/model_list/**. Only the model of China ('中国.pt') is provided in this folder, we'll upload the other 40 models very quickly.
+Located in the directory: **USTC-Pickers/model_list/**. Only the model of China ('中国.pt') is provided in this folder, we'll upload the other 40 models very soon.
 
 # 3. Batch prediction
 
