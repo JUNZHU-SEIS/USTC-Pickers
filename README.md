@@ -1,31 +1,36 @@
 Notes:
-1. A major update for this branch is that the PhaseNet model of this branch is the same as the original [PhaseNet](https://github.com/AI4EPS/PhaseNet/blob/master/phasenet/model.py) implemented by TensorFlow (W. Zhu, 2018). The old architecture we used (called PhaseNetLight now) will not be maintained. A comparison between the output of the old and new model is shown below (The input waveform is from Sichuan).
-2. A minor update for this branch is that we adopt diverse data augmentation techniques when training the China model, such as adding Gap, pure Noise (from the STEAD data set), superimposing two events, dropping 1-2 components, clipping, randomly cropping 3001 sample points.
-2. This document will be intensely updated before the release of **seisbench v0.3**.
+1. A major update for this branch is that the PhaseNet model is the same as the original [PhaseNet](https://github.com/AI4EPS/PhaseNet/blob/master/phasenet/model.py) written in TensorFlow (W. Zhu, 2018). The old model (called PhaseNetLight now, see this [PR](https://github.com/seisbench/seisbench/pull/158) for more details) will not be maintained any longer. A comparison between the output of the old and this new model is shown below (The input waveform is from Sichuan province).
+2. A minor update for this branch is that we adopt diverse data augmentation techniques when training the China model, including adding Gap, adding pure Noise from the [STEAD data set](https://github.com/smousavi05/STEAD), superimposing 2 seismic recordings with a random offset, dropping 1 or 2 components, clipping, randomly cropping 3001 sample points.
+2. This document will be intensely updated before the release of [**seisbench v0.3**](https://github.com/seisbench/seisbench/milestone/1).
 ![old](https://raw.githubusercontent.com/JUNZHU-SEIS/USTC-Pickers/main/demo/figure/test.png)
 ![new](./demo/figure/Sichuan_New_model.png)
-# USTC-Pickers: a Unified Set of Seismic Phase Pickers Transfer Learned for China
+# USTC-Pickers: a Unified Set of seismic phase pickers Transfer learned for China
 
 # 1. Install [Anaconda](https://www.anaconda.com/) and requirements
 
-* Download the 'phasenet_fix' branch of USTC-Pickers repository
+* Create a folder for this project
 
   ```bash
-  git clone --branch phasenet_fix https://github.com/JUNZHU-SEIS/USTC-Pickers.git
+  mkdir test
+  cd test
   ```
 
-* Click this [link](https://github.com/seisbench/seisbench/archive/refs/heads/phasenet_fix.zip) to download the 'phasenet_fix' branch of seisbench. Save it in the parent folder of USTC-Pickers (USTC-Pickers/../).
+* Click this [link](https://github.com/JUNZHU-SEIS/USTC-Pickers/archive/refs/heads/phasenet_fix.zip) to download the 'phasenet_fix' branch of USTC-Pickers. Save it in the folder you just created.
 
-* Install an environment for USTC-Pickers **manually**
+
+* Click this [link](https://github.com/seisbench/seisbench/archive/refs/heads/phasenet_fix.zip) to download the 'phasenet_fix' branch of seisbench. Save it in the same folder.
+
+* Create an environment and install packages for USTC-Pickers (*Please make sure your conda is the latest version*)
 
   ```bash
+  unzip USTC-Pickers-phasenet_fix.zip
   unzip seisbench-phasenet_fix.zip
   cd seisbench-phasenet_fix
   conda create -n USTC-Pickers
   conda activate USTC-Pickers
   conda install python
   pip install .
-  cd ../USTC-Pickers
+  cd ../USTC-Pickers-phasenet_fix
   ```
 
 # 2. Transfer-learned pickers
@@ -40,7 +45,7 @@ If you find this toolkit helpful, please cite papers below:
 
 ---
 
-* [USTC-Pickers: a Unified Set of Seismic Phase Pickers Transfer Learned for China](https://www.equsci.org.cn/en/article/id/95a7e2fc-677e-4879-82a1-bf3b10f945aa)
+* [USTC-Pickers: a Unified Set of seismic phase pickers Transfer learned for China](https://www.equsci.org.cn/en/article/id/95a7e2fc-677e-4879-82a1-bf3b10f945aa)
 
   _How USTC-Pickers are trained and suggestions on using them in different scenarios._
 ---
