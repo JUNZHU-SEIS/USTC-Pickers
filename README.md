@@ -30,6 +30,7 @@ Notes:
   conda activate USTC-Pickers
   conda install python
   pip install .
+  conda install ipython
   cd ../USTC-Pickers-phasenet_fix
   ```
 
