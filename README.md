@@ -1,6 +1,6 @@
 Notes:
 1. A major update for this branch is that the PhaseNet model is the same as the original [PhaseNet](https://github.com/AI4EPS/PhaseNet/blob/master/phasenet/model.py) written in TensorFlow (W. Zhu, 2018). The old model (called PhaseNetLight now, see this [PR](https://github.com/seisbench/seisbench/pull/158) for more details) will not be maintained any longer. A comparison between the output of the old and this new model is shown below (The input waveform is from Sichuan province).
-2. A minor update for this branch is that we adopt diverse data augmentation techniques when training the China model, including adding Gap, adding pure Noise from the [STEAD data set](https://github.com/smousavi05/STEAD), superimposing 2 seismic recordings with a random offset, dropping 1 or 2 components, clipping, randomly cropping 3001 sample points.
+2. A minor update for this branch is that we adopt diverse data augmentation techniques when training the China model, including adding Gap, superimposing waveforms with the pure Noise from the [STEAD data set](https://github.com/smousavi05/STEAD), superimposing 2 seismic recordings with a certain offset, dropping 1 or 2 components, clipping, randomly cropping 3001 sample points.
 2. This document will be intensely updated before the release of [**seisbench v0.3**](https://github.com/seisbench/seisbench/milestone/1).
 ![old](https://raw.githubusercontent.com/JUNZHU-SEIS/USTC-Pickers/main/demo/figure/test.png)
 ![new](./demo/figure/Sichuan_New_model.png)
