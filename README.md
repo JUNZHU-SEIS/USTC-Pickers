@@ -28,9 +28,10 @@ Notes:
   cd seisbench-phasenet_fix
   conda create -n USTC-Pickers
   conda activate USTC-Pickers
-  conda install python
+  conda install python=3.7
   pip install .
-  conda install ipython
+  conda install jupyter
+  conda update ipykernel
   cd ../USTC-Pickers-phasenet_fix
   ```
 
