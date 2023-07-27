@@ -2,7 +2,7 @@
 
 Update summary for v0.1:
 1. The architecture of the USTC-Pickers is redesigned to exactly match the original [PhaseNet](https://github.com/AI4EPS/PhaseNet/blob/master/phasenet/model.py) written by W. Zhu&G. Beroza (2018). The earlier version of USTC-Pickers will not be maintained any more (i.e., PhaseNetLight, see this [PR](https://github.com/seisbench/seisbench/pull/158) for details) 
-2. We adopt diverse data augmentation techniques during training this new version of USTC-Pickers: adding data gaps, superimposing waveforms with the pure Noise from [STEAD](https://github.com/smousavi05/STEAD), randomly dropping 1 or 2 of the 3 components, waveform clipping, random waveform shifting.
+2. We adopt diverse data augmentation techniques during training: adding data gaps, superimposing waveforms with the pure Noise from [STEAD](https://github.com/smousavi05/STEAD), randomly dropping 1 or 2 of the 3 components, waveform clipping, random waveform shifting.
 3. The CN picker trained with the whole DiTing data set can be directly accessed by SeisBench now, through ***sbm.PhaseNet.from_pretrained('diting')***.
 4. Many thanks to the users of USTC-Pickers, whose feedbacks make the new pickers less sensitive to background noise and thus significantly reduces the number of false picks.
 
