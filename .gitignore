@@ -4,6 +4,5 @@ AH.pt
 out/
 .vs/
 .git/
-model_list.zip
 .vscode/
 __pycache__/
