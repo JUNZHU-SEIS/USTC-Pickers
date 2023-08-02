@@ -22,7 +22,8 @@ Update summary for v0.1:
   conda activate USTC-Pickers
   pip install seisbench
   ```
-  
+
+* Download USTC-Pickers as [model_list.zip](), unzip and save it in the folder: **USTC-Pickers/**
 
 # 2. Transfer-learned pickers
 
