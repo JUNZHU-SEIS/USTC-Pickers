@@ -1,0 +1,8 @@
+build/
+build.linux/
+AH.pt
+out/
+.vs/
+.git/
+.vscode/
+__pycache__/

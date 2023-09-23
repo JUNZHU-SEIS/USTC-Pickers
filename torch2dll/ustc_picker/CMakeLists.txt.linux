@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.0 FATAL_ERROR)
+project(pick)
+
+find_package(Torch REQUIRED)
+
+add_executable(pick pick.cpp)
+target_link_libraries(pick "${TORCH_LIBRARIES}")
+set_property(TARGET pick PROPERTY CXX_STANDARD 14)
