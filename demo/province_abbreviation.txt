@@ -1,0 +1,34 @@
+cn,en
+天津市,Tianjin
+宁夏回族自治区,Ningxia
+安徽省,Anhui
+山东省,Shandong
+山西省,Shanxi
+广东省,Guangdong
+广西壮族自治区,Guangxi
+新疆维吾尔自治区,Xinjiang
+江苏省,Jiangsu
+江西省,Jiangxi
+河北省,Hebei
+河南省,Henan
+浙江省,Zhejiang
+海南省,Hainan
+湖北省,Hubei
+湖南省,Hunan
+甘肃省,Gansu
+福建省,Fujian
+西藏自治区,Tibet
+贵州省,Guizhou
+上海市,Shanghai
+辽宁省,Liaoning
+重庆市,Chongqing
+陕西省,Shaanxi
+青海省,Qinghai
+香港特别行政区,Hong Kong
+黑龙江省,Heilongjiang
+云南省,Yunnan
+内蒙古自治区,Inner Mongolia
+北京市,Beijing
+台湾省,Taiwan
+吉林省,Jilin
+四川省,Sichuan
