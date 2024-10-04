@@ -7,11 +7,11 @@ from obspy import read
 import matplotlib.pyplot as plt
 from config import *
 
-# 为拾取的目标区域选定合适的picker，如Sichuan（四川）、CSES（实验场）、TP（青藏高原）、China（中国）
-location = input('Plase specify a region or province to pick phases, e.g. Beijing. 42 pickers are available in the subfolder "%s"'%os.path.join('USTC-Pickers', 'model_list', 'v0.1'))
+# 为拾取的目标区域选定合适的picker，如Sichuan（四川）、CSES（实验场）、TP（青藏高原）
+location = input('Plase specify a region or province to pick phases, e.g. Beijing. 42 pickers are available in the subfolder "%s"'%os.path.join('USTC-Pickers','model_list','v0.1'))
 if location not in en2cn:
     exit('The region you specified is not available. Plase choose a region or province from below--------\n%s\n-----------------------------------------------------------------------------------------------'%(', '.join(en2cn)))
-elif location!='China':
+else:
     model_save_path = glob.glob(os.path.join(model_list, '*'+en2cn[location]+'.pt'))[0]
     print('You are using the picker located at %s\n'%model_save_path)
     # 模型初始化
@@ -19,10 +19,6 @@ elif location!='China':
     # 加载模型
     picker.load_state_dict(torch.load(model_save_path,
 			map_location=device).state_dict())
-else:
-    print('You are using the China picker, "diting", published by SeisBench')
-    picker = sbm.PhaseNet.from_pretrained('diting')
-    picker.sampling_rate=sample_rate
 
 # 读取波形
 #inputfile = mseed.replace('Beijing', 'Sichuan')
@@ -53,8 +49,7 @@ plt.show()
 plt.close()
 
 # 拾取震相
-classifyoutput = picker.classify(stream, P_threshold=.3, S_threshold=.3)
-picks = classifyoutput.picks
+picks = picker.classify(stream, P_threshold=.3, S_threshold=.3)
 print('Printing picks')
 lines = {phase:{'trace':[],'time':[]} for phase in 'PS'}
 def format_utc(t):
