@@ -30,7 +30,7 @@ Located in the directory: **USTC-Pickers/model_list/v0.1/**
 
 # 3. Batch prediction
 
-Detailed in this [Notebook](https://github.com/JUNZHU-SEIS/USTC-Pickers/blob/main/demo/demo_pick.ipynb)
+Detailed in this [Notebook](https://github.com/JUNZHU-SEIS/USTC-Pickers/blob/master/demo/demo_pick.ipynb)
 
 # 4. Other tutorials
 * Video tutorials for a brief [introduction](https://www.koushare.com/video/videodetail/31654) and [technical details](https://www.koushare.com/video/videodetail/31655)
