@@ -20,7 +20,8 @@ Update summary for v0.1:
   ```bash
   conda create -n USTC-Pickers
   conda activate USTC-Pickers
-  pip install seisbench==0.5.2
+  conda install python
+  pip install seisbench==0.3.0
   ```
 
 # 2. Transfer-learned pickers
